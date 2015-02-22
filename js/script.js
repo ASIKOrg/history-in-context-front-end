@@ -35,6 +35,11 @@ function display(){
     }
 }
 
+function drawTimeline()
+{
+    
+}
+
 // Make GET Request
 function httpGet(search)
 {
@@ -42,6 +47,6 @@ function httpGet(search)
     
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", '/api/?=' + search, false );
-    xmlHttp.send( null );
+    xmlHttp.send( search );
     return xmlHttp.responseText;
 }
