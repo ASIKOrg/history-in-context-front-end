@@ -1,15 +1,14 @@
 // Array of all json date objects
-var events[];
+var events;
 var inQuery;
 var outQuery;
 
 function buttonClicked(){
-//    var text = currentUser.get("search_box");
-//    document.getElementById("userEmail").innerHTML = email;
-    document.getElementById("search").innerHTML = '<p>Hello</p>';
-//    inQuery = $('#search').val();
-//    outQuery = httpGet(inQuery);
-//    showResult('{"start":1999,"end":2015,"description":' + inQuery + '"}');
+    inQuery = $('#search_box').val();
+    //alert(inQuery);
+    //outQuery = httpGet(inQuery);
+    alert(inQuery);
+    showResult('{"start":1999,"end":2015,"description":' + inQuery + '"}');
 }
 
 // 
@@ -30,13 +29,15 @@ function showResult(text){
 function display(){
     var empty = true;
     var minYear = -9999;
-    for(var event: events){
-        document.getElementByClass("timeline_box").innerHTML = '<div id="event"></div>';
-        for(var key in event){
+    var i;
+    for(i = 0; i < events.length; i++){
+        document.getElementById("added_events").innerHTML = '<div id="event"></div>';
+        var key;
+        for(key = 0; key < events.length; key++){
             document.getElementById("event").innerHTML = 
                 '<div class="description">' + events[key].description + '</div>' +
                 '<div class="start">' + events[key].start +'</div>' +
-                '<div class="end">' + events[key].end +'</div>');
+                '<div class="end">' + events[key].end +'</div>';
         }
     }
 }
