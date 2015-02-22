@@ -4,10 +4,11 @@ var inQuery;
 var outQuery;
 
 function buttonClicked(){
-    inQuery = $('#search_box').val();
-    //alert(inQuery);
-    //outQuery = httpGet(inQuery);
-    showResult('{"start":1999,"end":2015,"description":"' + inQuery + '"}');
+    text = $('#search_box').val();
+    inQuery = {"Search":text};
+    alert(inQuery);
+    outQuery = httpGet(inQuery);
+    showResult(outQuery);
 }
 
 // 
@@ -43,10 +44,14 @@ function drawTimeline()
 // Make GET Request
 function httpGet(search)
 {
-    var xmlHttp = null;
-    
-    xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", '/api/?=' + search, false );
-    xmlHttp.send( search );
-    return xmlHttp.responseText;
+    $.(ajax({
+        type: "GET",
+        url: "",
+        content: search,
+        success: function(data){
+            showResult(data);
+        }
+    });
+    )
 }
+
