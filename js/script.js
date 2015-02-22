@@ -4,19 +4,18 @@ var inQuery;
 var outQuery;
 
 function buttonClicked(){
-    text = $('#search_box').val();
-    inQuery = {"Search":text};
-    alert(inQuery);
+    inQuery = $('#search_box').val();
     outQuery = httpGet(inQuery);
     showResult(outQuery);
+    //showResult('{"start":1999,"end":2015,"description":"' + inQuery + '"}');
 }
 
 // 
 function showResult(text){
     
-    var obj = JSON.parse(text);
-    
-    events[events.length] = obj;
+    //var obj = JSON.parse(text);
+    events[events.length] = text;
+    alert(events);
     display();
 }
 
@@ -44,14 +43,17 @@ function drawTimeline()
 // Make GET Request
 function httpGet(search)
 {
-    $.(ajax({
-        type: "GET",
-        url: "",
-        content: search,
-        success: function(data){
+    $.ajax({
+        url: document.domain,
+        type: "get", //send it through get method
+        data: {'Search': search},
+        dataType: 'json',
+        success: function(response) {
             showResult(data);
+        },
+        error: function(xhr) {
+            //Do Something to handle error
         }
     });
-    )
 }
 
