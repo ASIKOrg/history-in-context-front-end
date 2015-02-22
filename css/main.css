@@ -21,19 +21,19 @@ body {
 
 .added_events {
     height: 400px;
-    width: 200px;
+    width: 230px;
     background-color: white;
-    top: 180px;
+    top: 270px;
     left: 20px;
     position: absolute;
 }
 
 .added_events_title {
-    height: 50px;
-    width: 200px;
+    height: 60px;
+    width: 230px;
     background-color: #098CFF;
     color: white;
-    margin: 20px 0px 0px 20px;
+    margin: 110px 0px 0px 20px;
     
 }
 .search_box {
@@ -85,4 +85,16 @@ body {
 .search_contain {
     height: auto;
     width: auto;
+}
+.event {
+    border-bottom: 1px solid gray;
+}
+
+.timeline_box_title {
+    height: 60px;
+    width: 230px;
+    background-color: #098CFF;
+    color: white;
+    margin: 110px 0px 0px 20px;
+    
 }
