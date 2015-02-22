@@ -1,5 +1,5 @@
 // Array of all json date objects
-var events;
+var events = [];
 var inQuery;
 var outQuery;
 
@@ -7,8 +7,7 @@ function buttonClicked(){
     inQuery = $('#search_box').val();
     //alert(inQuery);
     //outQuery = httpGet(inQuery);
-    alert(inQuery);
-    showResult('{"start":1999,"end":2015,"description":' + inQuery + '"}');
+    showResult('{"start":1999,"end":2015,"description":"' + inQuery + '"}');
 }
 
 // 
@@ -16,29 +15,24 @@ function showResult(text){
     
     var obj = JSON.parse(text);
     
-    document.getElementById("event").innerHTML = 
-        obj.start + " - " +
-        obj.end + "<br>" +
-        obj.description;
-    display();
     events[events.length] = obj;
     display();
 }
 
 // Display each of the objects
 function display(){
+    alert("Display");
     var empty = true;
     var minYear = -9999;
-    var i;
-    for(i = 0; i < events.length; i++){
-        document.getElementById("added_events").innerHTML = '<div id="event"></div>';
-        var key;
-        for(key = 0; key < events.length; key++){
-            document.getElementById("event").innerHTML = 
-                '<div class="description">' + events[key].description + '</div>' +
-                '<div class="start">' + events[key].start +'</div>' +
-                '<div class="end">' + events[key].end +'</div>';
-        }
+    
+    $("#test2").html('<div id="event"></div>');
+    
+    $('<div id="event"></div>').appendTo(".added_events");
+    var key;
+    for(key = 0; key < events.length; key++){
+        $('<div class="description">' + events[key].description + '</div>').appendTo('#event');
+        $('<div class="start">' + events[key].start +'</div>').appendTo('#event');
+        $('<div class="end">' + events[key].end +'</div>').appendTo('#event');
     }
 }
 
