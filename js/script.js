@@ -7,13 +7,13 @@ function buttonClicked(){
     inQuery = $('#search_box').val();
     outQuery = httpGet(inQuery);
     //showResult(outQuery);
-    showResult('{"start":1999,"end":2015}');
+    //showResult('{"start":1999,"end":2015}');
 }
 
 // 
 function showResult(text){
     
-    var obj = JSON.parse(text);
+    var obj = text;//JSON.parse(text);
     events[events.length] = obj;
     alert(events);
     display();
@@ -40,12 +40,10 @@ function drawTimeline()
     var container = document.getElementById('visualization');
 
   // Create a DataSet (allows two way data-binding)
-    var data = new vis.DataSet(
-        []
-    );
+    var data = new vis.DataSet([]);
     
     var i;
-    for(i = 0; i < events.length(); i < i++){
+    for(i = 0; i < events.length(); i++){
         data.add({
             id: i+1,
             text: 'Event #' + i,
@@ -66,8 +64,8 @@ function httpGet(search)
 {
     $.ajax({
         url: document.domain,
-        type: "get", //send it through get method
-        data: {'Search': search},
+        type: "GET", //send it through get method
+        data: { 'Search': search},
         dataType: 'json',
         success: function(response) {
             showResult(response);
@@ -78,4 +76,3 @@ function httpGet(search)
         }
     });
 }
-
