@@ -21,11 +21,10 @@ function showResult(text){
 
 // Display each of the objects
 function display(){
-    alert("Display");
     var empty = true;
     var minYear = -9999;
     
-    $("#test2").html('<div id="event"></div>');
+    $(".added_events").html('<div id="event"></div>');
     
     $('<div id="event"></div>').appendTo(".added_events");
     var key;
