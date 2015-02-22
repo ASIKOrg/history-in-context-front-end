@@ -21,7 +21,23 @@ body {
 
 .added_events {
     height: 400px;
-    width: 100px;
+    width: 200px;
     background-color: white;
-    margin: 5px;
+    top: 170px;
+    left: 20px;
+    position: fixed;
+}
+
+.added_events_title {
+    height: 50px;
+    width: 200px;
+    background-color: #098CFF;
+    color: white;
+    margin: 20px 0px 0px 20px;
+    
+}
+
+.search_box {
+    height: 50px;
+    width: 
 }
