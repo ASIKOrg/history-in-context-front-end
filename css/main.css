@@ -50,10 +50,10 @@ body {
     
 }
 .timeline_box {
-    height: 200px;
-    width: 600px;
+    height: 400px;
+    width: 900px;
     background-color: white;
-    margin-left: 20px;
+    margin-left: 300px;
 }
 
     
@@ -92,9 +92,9 @@ body {
 
 .timeline_box_title {
     height: 60px;
-    width: 230px;
+    width: 900px;
     background-color: #098CFF;
     color: white;
-    margin: 110px 0px 0px 20px;
+    margin: -60px 0px 0px 300px;
     
 }
