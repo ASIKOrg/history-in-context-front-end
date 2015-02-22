@@ -23,9 +23,9 @@ body {
     height: 400px;
     width: 200px;
     background-color: white;
-    top: 170px;
+    top: 180px;
     left: 20px;
-    position: fixed;
+    position: absolute;
 }
 
 .added_events_title {
@@ -36,8 +36,42 @@ body {
     margin: 20px 0px 0px 20px;
     
 }
-
 .search_box {
+    border: 4px solid #098CFF;
     height: 50px;
-    width: 
+    width: 300px;
+    background-color: white;
+    margin-top: 20px;
+    margin-left: 400px;
+    float: left;
+}
+#search {
+    
+}
+.timeline_box {
+    height: 200px;
+    width: 600px;
+    background-color: white;
+    margin-left: 20px;
+}
+
+    
+
+.filler_one {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    margin-top: 20px;
+    float: left;
+}
+
+.search_button {
+    height: 60px;
+    width: 100px;
+    background-color: #098CFF;
+    color: white;
+    font-family: 'Lato';
+    font-size: 20px;
+    float: left; 
+    margin-top: 20px;
 }
