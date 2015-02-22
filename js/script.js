@@ -3,19 +3,17 @@ var events[];
 var inQuery;
 var outQuery;
 
-function 
-
 function buttonClicked(){
-    inQuery = $('#search').val();
-    outQuery = ''
+//    var text = currentUser.get("search_box");
+//    document.getElementById("userEmail").innerHTML = email;
+    document.getElementById("search").innerHTML = '<p>Hello</p>';
+//    inQuery = $('#search').val();
 //    outQuery = httpGet(inQuery);
-    showResult();
+//    showResult('{"start":1999,"end":2015,"description":' + inQuery + '"}');
 }
 
 // 
-function showResult(){
-    
-    var text = '{"start":1999,"end":2015,"description":' + inQuery + '"}';
+function showResult(text){
     
     var obj = JSON.parse(text);
     
@@ -30,13 +28,12 @@ function showResult(){
 
 // Display each of the objects
 function display(){
-    var wrapper = $('#timeline_box');
     var empty = true;
     var minYear = -9999;
     for(var event: events){
-        document.getElementById("timeline_box").innerHTML = '<div id="event"></div>';
+        document.getElementByClass("timeline_box").innerHTML = '<div id="event"></div>';
         for(var key in event){
-            document.getElementById("timeline_box").innerHTML = 
+            document.getElementById("event").innerHTML = 
                 '<div class="description">' + events[key].description + '</div>' +
                 '<div class="start">' + events[key].start +'</div>' +
                 '<div class="end">' + events[key].end +'</div>');
