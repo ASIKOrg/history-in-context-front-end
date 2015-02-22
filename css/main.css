@@ -44,6 +44,7 @@ body {
     margin-top: 20px;
     margin-left: 400px;
     float: left;
+    font-size: 30px;
 }
 #search {
     
@@ -67,11 +68,21 @@ body {
 
 .search_button {
     height: 60px;
-    width: 100px;
+    width: 140px;
     background-color: #098CFF;
     color: white;
     font-family: 'Lato';
-    font-size: 20px;
+    font-size: 25px;
     float: left; 
     margin-top: 20px;
+}
+
+.search_button p {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.search_contain {
+    height: auto;
+    width: auto;
 }
