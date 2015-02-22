@@ -34,7 +34,7 @@ function display(){
     }
 }
 
-function drawTimeline(data)
+function drawTimeline()
 {
     // DOM element where the Timeline will be attached
     var container = document.getElementById('visualization');
@@ -71,7 +71,7 @@ function httpGet(search)
         dataType: 'json',
         success: function(response) {
             showResult(response);
-            drawTimeline(response);
+            drawTimeline();
         },
         error: function(xhr) {
             //Do Something to handle error
