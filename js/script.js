@@ -7,7 +7,7 @@ function buttonClicked(){
     inQuery = $('#search_box').val();
     outQuery = httpGet(inQuery);
     //showResult(outQuery);
-    showResult('{"start":1999,"end":2015,"description":"' + inQuery + '"}');
+    showResult('{"start":1999,"end":2015}');
 }
 
 // 
@@ -29,15 +29,36 @@ function display(){
     $('<div id="event"></div>').appendTo(".added_events");
     var key;
     for(key = 0; key < events.length; key++){
-        $('<div class="description">' + events[key].description + '</div>').appendTo('#event');
         $('<div class="start">' + events[key].start +'</div>').appendTo('#event');
         $('<div class="end">' + events[key].end +'</div>').appendTo('#event');
     }
 }
 
-function drawTimeline()
+function drawTimeline(data)
 {
+    // DOM element where the Timeline will be attached
+    var container = document.getElementById('visualization');
+
+  // Create a DataSet (allows two way data-binding)
+    var data = new vis.DataSet(
+        []
+    );
     
+    var i;
+    for(i = 0; i < events.length(); i < i++){
+        data.add({
+            id: i+1,
+            text: 'Event #' + i,
+            start: events[i].start,
+            end: events[i].end
+        });
+    }
+
+    // Configuration for the Timeline
+    var options = {};
+
+    // Create a Timeline
+    var timeline = new vis.Timeline(container, data, options);
 }
 
 // Make GET Request
@@ -49,7 +70,8 @@ function httpGet(search)
         data: {'Search': search},
         dataType: 'json',
         success: function(response) {
-            showResult(data);
+            showResult(response);
+            drawTimeline(response);
         },
         error: function(xhr) {
             //Do Something to handle error
