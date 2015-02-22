@@ -6,15 +6,15 @@ var outQuery;
 function buttonClicked(){
     inQuery = $('#search_box').val();
     outQuery = httpGet(inQuery);
-    showResult(outQuery);
-    //showResult('{"start":1999,"end":2015,"description":"' + inQuery + '"}');
+    //showResult(outQuery);
+    showResult('{"start":1999,"end":2015,"description":"' + inQuery + '"}');
 }
 
 // 
 function showResult(text){
     
-    //var obj = JSON.parse(text);
-    events[events.length] = text;
+    var obj = JSON.parse(text);
+    events[events.length] = obj;
     alert(events);
     display();
 }
