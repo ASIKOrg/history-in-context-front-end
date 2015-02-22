@@ -99,10 +99,16 @@ body {
     background-color: #098CFF;
     color: white;
     margin: -60px 0px 0px 300px;
+    position: absolute;
     font-family: 'Lato';
     font-size: 30px;
 }
-.timeline_box_title p {
-    margin-left: center;
-    margin-top: 10px;
+.rand {
+    position: absolute;
+    z-index: 1;
+    font-family: 'Lato';
+    font-size: 30px;
+    color: white;
+    left: 675px;
+    top: 192px;
 }
