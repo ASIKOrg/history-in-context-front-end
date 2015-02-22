@@ -34,7 +34,13 @@ body {
     background-color: #098CFF;
     color: white;
     margin: 110px 0px 0px 20px;
+    font-family: 'Lato';
+    font-size: 30px;
     
+}
+.added_events_title p {
+    margin-left: 20px;
+    padding-top: 10px;
 }
 .search_box {
     border: 4px solid #098CFF;
@@ -46,7 +52,7 @@ body {
     float: left;
     font-size: 30px;
 }
-#search {
+#search_box{
     
 }
 .timeline_box {
@@ -55,9 +61,6 @@ body {
     background-color: white;
     margin-left: 300px;
 }
-
-    
-
 .filler_one {
     height: 50px;
     width: 50px;
@@ -96,5 +99,10 @@ body {
     background-color: #098CFF;
     color: white;
     margin: -60px 0px 0px 300px;
-    
+    font-family: 'Lato';
+    font-size: 30px;
+}
+.timeline_box_title p {
+    margin-left: center;
+    margin-top: -10px;
 }
